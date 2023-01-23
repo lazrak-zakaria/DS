@@ -44,22 +44,31 @@ void	print_preorder(node *current)
 	printf("\n");
 }
 
-void	print(node* current)
+void	print_inorder_2(node* current)
 {
 	if (!current)
 		return ;
-	print(current->left);
+	print_inorder_2(current->left);
 	printf("%c", current->data);
-	print(current->right);
+	print_inorder_2(current->right);
 }
 
-void	print2(node* current)
+void	print_postorder_2(node* current)
 {
 	if (!current)
 		return ;
-	print(current->left);
+	print_postorder_2(current->left);
+	print_postorder_2(current->right);
 	printf("%c", current->data);
-	print(current->right);
+}
+
+void	print_preorder_2(node* current)
+{
+	if (!current)
+		return ;
+	printf("%c", current->data);
+	print_preorder_2(current->left);
+	print_preorder_2(current->right);
 }
 
 int	main()
@@ -93,7 +102,11 @@ int	main()
 	root->left = nc;
 	nc->left = nd4;
 	root->right = nd5;
-	print(root);
+	print_inorder_2(root);
+	// printf("\n");
+	// print_postorder_2(root);
+	// printf("\n");
+	// print_preorder_2(root);
  }    //   				         *
                //          )
 //     				+                   4
