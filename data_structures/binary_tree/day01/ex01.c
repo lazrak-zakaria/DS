@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct node
-{
-	char		data;
-	struct node *left;
-	struct node	*right;
-} node;
+#include "tree.h"
 
 node	*ft_new_node(int data)
 {
@@ -70,6 +62,15 @@ void	print_preorder_2(node* current)
 	print_preorder_2(current->left);
 	print_preorder_2(current->right);
 }
+
+void	ft_clear(node *node)
+{
+	if (!node)
+		return ;
+	ft_clear(node->left);
+	ft_clear(node->right);
+	free(node);
+}  //true ?
 
 int	main()
 {
