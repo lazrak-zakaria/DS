@@ -1,4 +1,4 @@
-#include "tree.h"
+#include "../tree.h"
 
 int	ft_max(int a, int b)
 {
