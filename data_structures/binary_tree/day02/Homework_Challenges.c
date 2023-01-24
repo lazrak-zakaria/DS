@@ -12,13 +12,14 @@ int	ft_tree_max(node *current) /* positive nums only */
 	int mx = ft_max(ft_tree_max(current->left), ft_tree_max(current->right));
 	return (ft_max(mx, current->data));
 }
-
-// int	ft_tree_height(node *current)
-// {
-// 	if (!current)
-// 		return (0);
-// 	int	left = 1 + ft_tree_height(current->left);
-// }
+/*
+int	ft_tree_height(node *current)
+{
+ 	if (!current)
+ 		return (0);
+ 	int	left = 1 + ft_tree_height(current->left);
+}
+*/
 
 int	main()
 {
